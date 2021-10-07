@@ -3,6 +3,9 @@
 # one row per sample. It can be parsed easily via pandas.
 samples: "config/samples.csv"
 
+threads_repeat_modeler: 6
+threads_repeat_masker: 24
+
 params:
     clean:
       - "--exhaustive"

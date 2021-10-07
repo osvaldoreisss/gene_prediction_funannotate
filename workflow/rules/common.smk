@@ -12,6 +12,8 @@ validate(config, schema="../schemas/config.schema.yaml")
 
 samples = pd.read_csv(config["samples"], sep=",").set_index("sample", drop=False)
 
+threads_repeat_modeler = config['threads_repeat_modeler']
+threads_repeat_masker = config['threads_repeat_masker']
 
 def get_assembly(wildcards):
     assembly = samples.loc[(wildcards.sample), ["fasta"]].dropna()
