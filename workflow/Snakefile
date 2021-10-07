@@ -14,7 +14,8 @@ rule all:
         # The first rule should define the default target files
         # Subsequent target rules can be specified below. They should start with all_*.
         #expand("results/assembly_clean/{sample}.clean.fasta", sample=samples['sample'])
-        expand("results/repeat_masker/{sample}.clean.masked.fasta", sample=samples['sample'])
+        expand("results/funannotate_{sample}", sample=samples['sample'])
 
 include: "rules/clean.smk"
 include: "rules/repeatmask.smk"
+include: "rules/annotation.smk"
