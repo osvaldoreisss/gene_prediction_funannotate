@@ -5,8 +5,6 @@ rule build_database:
         "results/repeat_modeler_database/{sample}.clean"
     conda:
         "../envs/repeat_modeler.yaml"
-    singularity: 
-        "docker://dfam/tetools:latest"
     log: 
         "results/log/build_database/{sample}.log"
     shell: 
@@ -20,8 +18,8 @@ rule repeat_modeler:
         "results/repeat_modeler_database/{sample}.clean"
     output: 
         "results/repeat_modeler/{sample}.clean"
-    singularity: 
-        "docker://dfam/tetools:latest"
+    conda:
+        "../envs/repeat_modeler.yaml"
     log: 
         "results/log/repeat_modeler/{sample}.log"
     threads: threads_repeat_modeler
